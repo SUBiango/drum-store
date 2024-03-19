@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins;
+}
+
+svg {
+    width: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #2f2f2f;
+}
+
+.container {
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: 0.5s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.icon-cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-cart span {
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-tab {
+    background-color: #353432;
+    color: #eee;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.cart-tab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cart-tab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.cart-tab .btn button {
+    background-color: #E8BC0E;
+    border: none;
+    font-family: inherit;
+}
+
+.cart-tab .btn button.close {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.cart-tab .list-cart {
+    overflow: auto;
+}
+
+.cart-tab .list-cart::-webkit-scrollbar {
+    width: 0;
+}
+
+.cart-tab {
+    right: -400px;
+    transition: 0.5s;
+}
+
+body.active-tab-cart .cart-tab {
+    right: 0;
+}
+
+body.active-tab-cart .container{
+    transform: translateX(-250px)
+}
+
+/*List item product*/
+.list-product .item img {
+    width: 80%;
+}
+
+.list-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.list-product .item {
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.list-product .item h2 {
+    font-weight: 500;
+    font-size: large;
+}
+
+.list-product .item button {
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* List cart item */
+.list-cart .item img {
+    width: 100%;
+}
+
+.list-cart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.list-cart .item .quantity {
+    display: flex;
+}
+
+.list-cart .item .quantity span {
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.list-cart .item .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #fff;
+    cursor: default;
+}
+
+.list-cart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+/* Detail */
+.detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.detail .image img {
+    width: 100%;
+}
+
+.detail .image {
+    position: relative;
+}
+
+.detail .name {
+    font-size: xxx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+}
+
+.detail .price {
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 7px;
+    margin-bottom: 20px;
+}
+
+.detail .buttons button {
+    background-color: #eee;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: large;
+    cursor: pointer;
+}
+
+.detail svg {
+    width: 15px;
+}
+
+.detail .buttons button:nth-child(2) {
+    background-color: #2f2f2f;
+    color: #eee;
+    display: inline-flex;
+    gap: 20px;
+    box-shadow: 0 10px 20px #2f2f2f;
+}
+
+.detail .buttons svg {
+    transform: translateY(5px)
+}
+
+.detail .description {
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+/* .title {
+
+} */
+
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .list-product {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .list-product {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .detail {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .detail .image img {
+        width: unset;
+        height: 40vh;
+    }
+
+    .detail .name {
+        font-size: x-large;
+        margin: 0;
+        padding: 0;
+    }
+
+    .detail .buttons button {
+        font-size: small;
+    }
+}
