@@ -11,9 +11,9 @@ const cart = () => {
         body.classList.toggle('active-tab-cart')
     })
 
-    closeBtn.addEventListener('click', () => {
-        body.classList.toggle('active-tab-cart')
-    })
+    // closeBtn.addEventListener('click', () => {
+    //     body.classList.toggle('active-tab-cart')
+    // })
 
     const setProductInCart = (productId, quantity, position) => {
         if (quantity > 0) {
