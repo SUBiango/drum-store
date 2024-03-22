@@ -8,6 +8,7 @@
     fetch('/template.html')
         .then(response => response.text()) 
         .then(html => {
+            console.log(html)
             app.innerHTML = html
             let contentTab = document.getElementById('content-tab')
             contentTab.innerHTML = temporaryContent.innerHTML

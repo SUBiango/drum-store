@@ -8,10 +8,18 @@
 </head>
 <body>
 
+    <div class="welcome">
+        <p>Welcome to our store</p>
+    </div>
     <div class="container">
         <header>
-            <div class="title">
-                <a href="/">Home</a>
+            <div class="search">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                </svg>                  
+            </div>
+            <div>
+                <img src="/images/logo.png" alt="company logo">
             </div>
             <div class="icon-cart">
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -24,18 +32,21 @@
             content in template file
         </div>
     </div>
-    
-    <div class="cart-tab">
-        <h1>Shopping Cart</h1>
-        <div class="list-cart">
-            show item here
-        </div>
-        <div class="btn">
-            <button class="close">Close</button>
-            <button class="check-out">checkOut</button>
-        </div>
+    <div class="footer">
+        <p>Developed with 🧡 by <a href="https://github.com/SUBiango" target="_blank">Umaru</a></p>
     </div>
     
-    <script src="/js/cart.js"></script>
+    <div class="cart-tab">
+       <div class="modal">
+            <!-- <div class="close">&times;</div> -->
+            <h1>Shopping Cart</h1>
+            <div class="list-cart">
+                show item here
+            </div>
+            <button class="check-out">Check Out</button>
+       </div>
+    </div>
+    
+    <script src="/js/cart.js" type="module"></script>
 </body>
 </html>
