@@ -2,18 +2,19 @@ import products from "../products.js";
 
 const cart = () => {
     let iconCart = document.querySelector('.icon-cart');
-    let closeBtn = document.querySelector('.cart-tab .close');
-    let body = document.querySelector('body')
+    let cartTab = document.querySelector('.cart-tab')
+    let closeBtn = document.querySelector('.close');
+    // let body = document.querySelector('body')
 
     let cart = []
 
     iconCart.addEventListener('click', () => {
-        body.classList.toggle('active-tab-cart')
+        cartTab.style.display = 'block';
     })
 
-    // closeBtn.addEventListener('click', () => {
-    //     body.classList.toggle('active-tab-cart')
-    // })
+    closeBtn.addEventListener('click', () => {
+        cartTab.style.display = 'none';
+    })
 
     const setProductInCart = (productId, quantity, position) => {
         if (quantity > 0) {
@@ -36,6 +37,8 @@ const cart = () => {
     const refreshCartHTML = () => {
         let listHTML = document.querySelector('.list-cart')
         let totalHTML = document.querySelector('.icon-cart span')
+        let subTotal = document.querySelector('.sub-total')
+        let totalPrice = 0
         let totalQuantity = 0;
         listHTML.innerHTML = null;
         cart.forEach(item => {
@@ -56,10 +59,16 @@ const cart = () => {
                     <span>${item.quantity}</span>
                     <span class="plus" data-id="${info.id}">+</span>
                 </div>
-            `
+            ` 
             listHTML.appendChild(newItem)
-        })
+            let prices = newItem.querySelectorAll('.total-price')
+            prices.forEach(price => {
+                totalPrice += parseFloat(price.textContent)
+            })
+        }) 
+
         totalHTML.innerText = totalQuantity;
+        subTotal.innerText = `Subtotal: ${totalPrice}`;
     }
 
     // Event click
