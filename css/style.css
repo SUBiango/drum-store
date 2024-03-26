@@ -36,14 +36,6 @@ a {
     cursor: pointer;
 }
 
-.container .search {
-    cursor: pointer;
-}
-
-.container .search input {
-    width: 50px;
-    height: 50px;
-}
 
 header {
     display: flex;
@@ -52,8 +44,58 @@ header {
     padding: 20px 0;
 }
 
+header > a {
+    flex: 0 0 auto;
+}
+
 header img {
     width: 50%;
+}
+
+.container .search > div {
+    display: inline-block;
+    position: relative;
+    /* filter: drop-shadow(0 2px #000000); */
+}
+
+.container .search > div:after {
+    content: "";
+    background: #BC6C25;
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 22px;
+    right: -2px;
+    transform: rotate(135deg)
+}
+
+.container .search input {
+    color: #777;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 12px;
+    border: solid 3px #BC6C25;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+}
+
+.container .search input::placeholder {
+    color: #e3e3e3;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.container .search input:focus::placeholder {
+    opacity: 1;
+}
+
+.container .search input:focus,
+.container .search input:not(:placeholder-shown) {
+    width: 150px;
 }
 
 .icon-cart {
@@ -62,7 +104,7 @@ header img {
 }
 
 .icon-cart span {
-    background-color: red;
+    background-color: #BC6C25;
     position: absolute;
     top: 50%;
     right: -20px;
@@ -341,4 +383,8 @@ body.active-tab-cart .container{
     .detail .buttons button {
         font-size: small;
     }
+}
+
+.hide {
+    display: none;
 }

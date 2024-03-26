@@ -1,6 +1,6 @@
  import cart from "./cart.js"
+ import search from "./search.js"
  import products from "../products.js"
- 
  let app = document.getElementById('app')
  let temporaryContent = document.getElementById('temporary-content')
 
@@ -14,6 +14,7 @@
             temporaryContent.innerHTML = null;
             cart()
             initApp()
+            
         })
         .catch(error => {
             console.log("Error fetching data", error)
@@ -21,6 +22,7 @@
  }
 
  loadTemplate()
+
 
  const initApp = () => {
     let listProduct = document.querySelector('.list-product')
@@ -33,7 +35,7 @@
             <a href="/detail.html?id=${product.id}">
                 <img src="${product.image}"/>
             </a>
-            <h2>${product.name}</h2>
+            <h2 class="product-name">${product.name}</h2>
             <div class="price">${product.price}</div>
             <button class="add-cart" data-id="${product.id}">
                 Add To Cart
@@ -41,4 +43,5 @@
         `
         listProduct.appendChild(newProduct)
     })
+    search(listProduct)
  }

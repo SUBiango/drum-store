@@ -4,7 +4,6 @@ const cart = () => {
     let iconCart = document.querySelector('.icon-cart');
     let cartTab = document.querySelector('.cart-tab')
     let closeBtn = document.querySelector('.close');
-    // let body = document.querySelector('body')
 
     let cart = []
 
@@ -80,6 +79,7 @@ const cart = () => {
 
         if (buttonClick.classList.contains('add-cart') || buttonClick.classList.contains('plus')) {
             quantity++
+            alert("Product added to cart!")
             setProductInCart(productId, quantity, position)
         } else {
             if (buttonClick.classList.contains('minus')) {
