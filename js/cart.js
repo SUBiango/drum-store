@@ -1,3 +1,4 @@
+import notification from "./notification.js"
 import products from "../products.js";
 
 const cart = () => {
@@ -79,8 +80,8 @@ const cart = () => {
 
         if (buttonClick.classList.contains('add-cart') || buttonClick.classList.contains('plus')) {
             quantity++
-            alert("Product added to cart!")
             setProductInCart(productId, quantity, position)
+            notification('👍 added to cart!')
         } else {
             if (buttonClick.classList.contains('minus')) {
                 quantity--

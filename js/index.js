@@ -1,8 +1,9 @@
  import cart from "./cart.js"
  import search from "./search.js"
  import products from "../products.js"
+ 
  let app = document.getElementById('app')
- let temporaryContent = document.getElementById('temporary-content')
+ let temporaryContent = document.getElementById('template-placeholder')
 
  const loadTemplate = () => {
     fetch('/template.html')

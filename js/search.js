@@ -3,8 +3,8 @@ const search = (items) => {
 
     function handleSearch(e) {
         let value = e.target.value.toLowerCase()
-        let productSearch = items.querySelectorAll('.item')
-        productSearch.forEach(item => {
+        let searchItem = items.querySelectorAll('.item')
+        searchItem.forEach(item => {
             let productName = item.querySelector('.product-name')
             let textContent = productName.textContent.toString().toLowerCase()
             let isVisible = textContent.includes(value)
